@@ -26,13 +26,13 @@ const data = {
     ],
     whatDo : {
       aboutTitle:  [
-          ['About me', 'Skils', 'Portfolio', 'гбо.рф', 'Test Movie APP'],['Обо мне','Навыки', 'Портфолио', 'гбо.рф', 'Тестовое приложение фильмов'],
+          ['About me', 'Skils', 'Portfolio', 'гбо.рф', 'Test Movie APP', 'My GitHub:', 'Contacts'],['Обо мне','Навыки', 'Портфолио', 'гбо.рф', 'Тестовое приложение фильмов', 'Мой GitHub:', 'Контакты'],
         ],
       descriptionTitle: [
-        ["Hello, I'm Ruslan - Frontend developer from Minsk. My journey into programming started with love. This means that I received all the knowledge, skills and experience on my own. By education, I am an Aviation Equipment Operations Engineer.",
-        'Technologies that I own', 'Unified platform for the NGV fuel market', 'Test application using mock API <a class="link-test" href="http://f0646183.xsph.ru/">http://f0646183.xsph.ru/</a>'],
-        ['Привет, я Руслан - Фронтенд  разработчик из Минска. Мой путь в программирование, начался с любовью. Это говорит то, что все знания, навыки и опыт я получал самостоятельно. По образованию я Инеженер по эксплуатации авиационного оборудования.',
-        'Технологии которыми я владею', 'Единая платформа рынка газомоторного топлива', 'Тестовое приложение с использованием ложного API <a class="link-test" href="http://f0646183.xsph.ru/">http://f0646183.xsph.ru/</a>']
+        ["<span class='me-text'>Hello, I'm Ruslan - Frontend developer from Minsk. My journey into programming started with love. This means that I received all the knowledge, skills and experience on my own. By education, I am an Aviation Equipment Operations Engineer.</span>",
+        '<span class="me-text2">Technologies that I own</span>', 'Unified platform for the NGV fuel market', 'Test application using mock API <a class="link-test" href="http://f0646183.xsph.ru/">http://f0646183.xsph.ru/</a>', ' <a class="link-test" href="https://github.com/Ruslan-Ragilo">https://github.com/Ruslan-Ragilo</a>', 'Want to know more or just chat? You are welcome!'],
+        ['<span class="me-text">Привет, я Руслан - Фронтенд  разработчик из Минска. Мой путь в программирование, начался с любовью. Это говорит то, что все знания, навыки и опыт я получал самостоятельно. По образованию я Инеженер по эксплуатации авиационного оборудования.</span>',
+        '<span class="me-text2">Технологии которыми я владею</span>', 'Единая платформа рынка газомоторного топлива', 'Тестовое приложение с использованием ложного API <a class="link-test" href="http://f0646183.xsph.ru/">http://f0646183.xsph.ru/</a>', ' <a class="link-test" href="https://github.com/Ruslan-Ragilo">https://github.com/Ruslan-Ragilo</a>', 'Хотите узнать больше или просто поболтать? Добро пожаловать!']
       ]
     }
   }
