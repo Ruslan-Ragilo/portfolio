@@ -5,11 +5,6 @@ const data = {
       ['Home', 'About me', 'Skills', 'Portfolio', 'Contacts'],
       ['Главная', 'Обо мне', 'Навыки', 'Проекты', 'Контакты']
     ],
-
-    href: [
-      ['o', 'About me', 'Skills', 'Portfolio', 'Contacts'],
-      ['o', 'About me', 'Skills', 'Portfolio', 'Contacts']
-    ],
   },
   infoMe: {
     fullName: [
@@ -48,10 +43,11 @@ const listNav = document.querySelector('.list-nav'),
       titles = document.querySelectorAll('.title'),
       descriptionMe = document.querySelectorAll('.description-me'),
       imgJs = document.querySelector('.img-js > img'),
-      blockCardsSkils = document.querySelector('.wrapper-block-skils');
+      blockCardsSkils = document.querySelector('.wrapper-block-skils'),
+      arrowTop = document.querySelector('.arrow-top');
 
 data.navigation.nav[0].map((el, i) => {
-  listNav.innerHTML += `<li class='list-item'><a href=${data.navigation.href[0][i]}>${el}</a></li>`;
+  listNav.innerHTML += `<li class='list-item'><a class='link-nav' href="#${i}">${el}</a></li>`;
   fullName.innerHTML = `<p class="text-full-name">${data.infoMe.fullName[0]}</p>`
   aboutMe.innerHTML = `<p class="aboutMe">${data.infoMe.proffecion[0]}</p><p class="aboutMe">${data.infoMe.oldFrom[0]}</p>`;
   titles.forEach((el,i) => {
@@ -76,7 +72,7 @@ toggleLang.addEventListener('click', (e) => {
         i === 0 ? itemsLang[1].classList.remove('active') : itemsLang[0].classList.remove('active');
         e.target.classList.add('active');
         listNav.innerHTML = '';
-        data.navigation.nav[i].map((el, index) => listNav.innerHTML += `<li class='list-item'><a href=${data.navigation.href[i][index]}>${el}</a></li>`);
+        data.navigation.nav[i].map((el, index) => listNav.innerHTML += `<li class='list-item'><a href=#${index}>${el}</a></li>`);
         fullName.innerHTML = '';
         fullName.innerHTML = `<p class="text-full-name">${data.infoMe.fullName[i]}</p>`;
         aboutMe.innerHTML = '';
@@ -116,6 +112,8 @@ window.addEventListener("scroll", (e) =>  {
   } else {
     blockCardsSkils.classList.remove('active')
   }
+  //add arrow top
+  window.scrollY > 100 ? arrowTop.classList.add('active') : arrowTop.classList.remove('active')
 });
 
 // slider
@@ -171,5 +169,39 @@ buttonNav.forEach((el, i) => {
 ShowSlider(arrImgURL1, 0);
 ShowSlider(arrImgURL2, 1);
 
+
+//scroll top arrow
+arrowTop.addEventListener('click', () => {
+  window.scrollTo(pageYOffset, 0);
+})
+
+//toggle nav button
+const button = document.querySelector('.burger-btn'),
+      header = document.querySelector('header'),
+      linksNav = document.querySelectorAll('.link-nav'),
+      html = document.querySelector('html');
+
+button.addEventListener('click', () => {
+	button.classList.toggle('active');
+  header.classList.toggle('active');
+  header.classList.contains('active') ? html.style.overflowY = 'hidden' : html.style.overflowY = 'scroll'
+})
+
+if(window.screen.width <= 600) {
+  window.addEventListener('click', (e) => {
+    linksNav.forEach(el => {
+      if(e.target == el) {
+        button.classList.toggle('active');
+        header.classList.toggle('active');
+        header.classList.contains('active') ? html.style.overflowY = 'hidden' : html.style.overflowY = 'scroll'
+      }
+      if (!e.target.closest('header') && !e.target.closest('.burger-btn')) {
+        button.classList.remove('active');
+        header.classList.remove('active');
+        html.style.overflowY = 'scroll'
+      }
+    })
+  })
+}
 
 
